@@ -1,0 +1,6 @@
+{
+  "method": "Targeted image_gen edits; the editing agent reported visual inspection of each final PNG.",
+  "files": ["14-avatar-photo-stylization.png", "15-short-dialogue-voice.png", "16-museum-science-discovery.png", "17-resource-care-alert.png"],
+  "review": "NASA-style patches appear on fictional astronaut uniforms. The photo-reference sequence, short dialogue, museum/video details, resource meters, greenhouse and AI concept footer were retained.",
+  "context": "ASTRA remains independent. The NASA identifier is a third-party reference; no endorsement or permission is claimed. Generated marks are illustrative."
+}

@@ -2,9 +2,9 @@
   "schemaVersion": 1,
   "scope": "Independent ASTRA Waves 0–3B finite exploration slice; extended campaign incomplete",
   "executionMode": "independent_demo",
-  "implementationCommit": "a239c952675598253a4c5fa4497f7c45273714f9",
+  "implementationCommit": "9a6c65f62b0ecdf6c36369411077e10b18e19dff",
   "buildArtifact": "npm run build -> dist/ (generated, not committed)",
-  "date": "2026-11-14",
+  "date": "2026-11-15",
   "environment": {
     "os": "Linux x86_64",
     "node": "24.22.1",
@@ -586,8 +586,8 @@
     "hardwareGpu": "pending",
     "stagedVisualAudit": {
       "status": "passed",
-      "checks": 6,
-      "captures": 6,
+      "checks": 16,
+      "captures": 7,
       "renderer": "SwiftShader software",
       "fullNavigation": false,
       "report": "docs/demo/VISUAL_FIXTURE_REPORT.json"
@@ -609,5 +609,23 @@
     "narrativeTreatment": "docs/narrative/EPISODE_01_TREATMENT.md",
     "narrativeBeats": "content-design/narrative-beats.json",
     "newEpisodeImplemented": true
+  },
+  "presentationExport": {
+    "status": "authored_exports_under_verification",
+    "slides": 30,
+    "secondsPerSlide": 6,
+    "totalSeconds": 180,
+    "newConceptBoards": 13,
+    "previousConceptBoards": 8,
+    "implemented": "Main HUD meters, authored companion reminders and static low-reserve edge",
+    "productionConcepts": [
+      "Stylized photo-reference avatars",
+      "In-world short dialogue direction",
+      "Microphone/voice and curated-source AI tutor",
+      "Wearable knowledge badges",
+      "Parental companion app",
+      "Cooperative multiplayer"
+    ],
+    "sources": "docs/presentation/SOURCES.md"
   }
 }

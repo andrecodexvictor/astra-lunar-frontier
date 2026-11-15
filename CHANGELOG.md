@@ -1,5 +1,10 @@
 # Changelog
 
+## Visual resource HUD and production pitch — 2026-11-15
+
+Replaced numerical survival cards with graphical meters, qualitative states, static low-reserve edging and authored Cometa/PIP reminders. Added thirteen original AI-generated production-concept boards with requested NASA-style uniform patches, a sourced thirty-slide/three-minute presentation, and reusable game/art export tooling. Photo-styled avatars, wearable knowledge brooches, voice, parent app and cooperative play are vision material. The current game remains a demo; no NASA endorsement or official submission is claimed.
+
+
 ## Waves 0–3B — 2026-11-14 (São Paulo; UTC rollover on November 15)
 
 Integrated extended resource and discovery mechanics, 45 kg cargo and 18 kg field-loadout limits, auxiliary ports, a restricted three-slot field kit and ten episode beats with causal actions. Added five original skinned/keyframed character GLBs, optional Cometa, local SVG portraits and world refinements; eight legacy GLBs remain in use. The simulation is version 3 and the save envelope version 4 with migrations. Added an executable CDP browser workflow and an economy rendering mode (threefold resolution reduction and no shadows; high remains unchanged). See `TEST_REPORT.md` and `docs/demo/E2E_REPORT.json` for measured outcomes and limitations. The initial Wave 3 CPU check recorded 64 tests passing in eight files; the final gate is recorded separately.

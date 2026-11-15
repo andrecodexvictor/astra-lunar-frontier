@@ -10,3 +10,11 @@
 - [ ] Full campaign and broader goals are not complete. No official challenge submission or eligibility is claimed.
 
 Eight labelled AI reference boards remain design material. Screenshots under `docs/demo/captures/` are browser evidence and must be read with the renderer and test conditions in the report. See `HANDOFF.md` for the code map and `docs/PRIOR_WORK.md` for pre-event provenance.
+
+## Exportação e direção infantil — 15/11/2026
+
+- Barras gráficas, lembretes autorais Cometa/PIP e alerta estático implementados; auditoria preparada passou 16 verificações e gerou sete capturas.
+- Treze novas pranchas de produção e oito anteriores preservadas; patches NASA são referências de uniforme e não parceria.
+- Pitch: trinta slides, seis segundos cada, 180 segundos; fontes verificadas, notas autorais e vídeo sem narração. Validação estrutural, de arquivos e do servidor exportado em `docs/presentation/EXPORT_VERIFICATION.json`.
+- Foto como referência de avatar no estilo ASTRA, broches vestíveis, voz/IA, aplicativo familiar e multiplayer continuam conceitos futuros.
+- Resultado final do gate de código e dependências: `docs/demo/evidence/FINAL_CHECKS.json`. GPU física e percurso E2E completo permanecem pendentes.

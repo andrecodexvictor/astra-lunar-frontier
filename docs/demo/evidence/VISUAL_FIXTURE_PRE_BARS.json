@@ -1,0 +1,394 @@
+{
+  "kind": "staged_visual_fixture_audit",
+  "status": "passed",
+  "warning": "Staged saves and camera placement; no navigation, full E2E, hardware GPU or performance acceptance is implied.",
+  "startedAt": "2026-11-15T00:12:53.276Z",
+  "commit": "a239c952675598253a4c5fa4497f7c45273714f9",
+  "node": "v24.22.1",
+  "os": "linux 6.18.57 x64",
+  "quality": "low",
+  "browser": {
+    "executable": "/usr/bin/chromium",
+    "args": [
+      "--headless=new",
+      "--enable-webgl",
+      "--ignore-gpu-blocklist",
+      "--use-gl=angle",
+      "--use-angle=swiftshader",
+      "--enable-unsafe-swiftshader",
+      "--remote-debugging-port=0",
+      "--user-data-dir=/tmp/astra-fixture-2BcmUy",
+      "--no-first-run",
+      "--no-default-browser-check",
+      "about:blank"
+    ],
+    "sandboxBypass": false,
+    "product": "Chrome/156.0.8078.79",
+    "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.0.0 Safari/537.36"
+  },
+  "renderer": {
+    "webgl2": true,
+    "unmaskedRenderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+    "unmaskedVendor": "Google Inc. (Google)"
+  },
+  "fixtures": [
+    {
+      "name": "academy",
+      "simulationHash": "dd13aa99",
+      "phase": "academy",
+      "region": "academy",
+      "tick": 0,
+      "production": "createGame/applyAction/stepGame; no direct simulation resource edits"
+    },
+    {
+      "name": "habitat",
+      "simulationHash": "5f6ec30b",
+      "phase": "lunar",
+      "region": "habitat",
+      "tick": 16,
+      "production": "createGame/applyAction/stepGame; no direct simulation resource edits"
+    },
+    {
+      "name": "canyon",
+      "simulationHash": "043d4f44",
+      "phase": "lunar",
+      "region": "canyon",
+      "tick": 36,
+      "production": "createGame/applyAction/stepGame; no direct simulation resource edits"
+    },
+    {
+      "name": "greenhouse",
+      "simulationHash": "03114511",
+      "phase": "lunar",
+      "region": "greenhouse",
+      "tick": 216,
+      "production": "createGame/applyAction/stepGame; no direct simulation resource edits"
+    },
+    {
+      "name": "sheltered",
+      "simulationHash": "340132e1",
+      "phase": "lunar",
+      "region": "habitat",
+      "tick": 31,
+      "production": "createGame/applyAction/stepGame; no direct simulation resource edits"
+    }
+  ],
+  "checks": [
+    {
+      "name": "pre-start-pagehide-no-save",
+      "passed": true,
+      "detail": "Reloaded unstarted page through browser navigation."
+    },
+    {
+      "name": "favicon-available",
+      "passed": true,
+      "detail": {
+        "url": "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='30' fill='%230a1520' stroke='%236ce5f5' stroke-width='4'/%3E%3Cpath d='M32 14L46 48H39L36 40H28L25 48H18L32 14ZM30 34H34L32 26L30 34Z' fill='%23ffb85c'/%3E%3C/svg%3E",
+        "status": 200
+      }
+    },
+    {
+      "name": "shelter-cometa-pressurized-visible",
+      "passed": true,
+      "detail": {
+        "snap": {
+          "enabled": true,
+          "mode": "follow",
+          "effectiveMode": "follow",
+          "pressurized": true,
+          "clip": "TurnRight",
+          "position": {
+            "x": 9.63,
+            "y": 0.42,
+            "z": 0.55
+          }
+        },
+        "exit": true
+      }
+    },
+    {
+      "name": "shelter-cometa-sniff-ui",
+      "passed": true,
+      "detail": {
+        "before": "Farejar (pressurizado)",
+        "after": "Farejar (pressurizado)",
+        "note": "UI availability only; this check does not assert counter or physics."
+      }
+    },
+    {
+      "name": "no-uncaught-errors-or-http-failures",
+      "passed": true,
+      "detail": {
+        "exceptions": [],
+        "consoleErrors": [],
+        "http": [],
+        "network": []
+      }
+    },
+    {
+      "name": "six-staged-captures",
+      "passed": true,
+      "detail": [
+        "docs/demo/fixture-captures/fixture-01-academy.png",
+        "docs/demo/fixture-captures/fixture-02-habitat.png",
+        "docs/demo/fixture-captures/fixture-03-habitat-crew.png",
+        "docs/demo/fixture-captures/fixture-04-canyon.png",
+        "docs/demo/fixture-captures/fixture-05-greenhouse.png",
+        "docs/demo/fixture-captures/fixture-06-mobile.png"
+      ]
+    }
+  ],
+  "errors": {
+    "exceptions": [],
+    "consoleErrors": [],
+    "http": [],
+    "network": []
+  },
+  "screenshots": [
+    {
+      "file": "docs/demo/fixture-captures/fixture-01-academy.png",
+      "fixture": "academy",
+      "description": "Academy and Cometa, staged pose.",
+      "snapshot": {
+        "region": "academy",
+        "position": {
+          "x": 0,
+          "y": 0,
+          "z": -10
+        },
+        "cometa": {
+          "enabled": true,
+          "mode": "follow",
+          "effectiveMode": "follow",
+          "pressurized": true,
+          "clip": "Idle",
+          "position": {
+            "x": 1.45,
+            "y": 0,
+            "z": -10.45
+          }
+        },
+        "canvas": {
+          "width": 426,
+          "height": 266
+        },
+        "metrics": {
+          "engine": "WebGL 2",
+          "fps": 1,
+          "meshes": 209,
+          "activeMeshes": 167,
+          "drawCalls": 160,
+          "region": "academy",
+          "frameTimeMs": 665.4,
+          "p95FrameTimeMs": 1856.3,
+          "triangles": 53074
+        }
+      }
+    },
+    {
+      "file": "docs/demo/fixture-captures/fixture-02-habitat.png",
+      "fixture": "habitat",
+      "description": "Habitat on arrival, staged pose.",
+      "snapshot": {
+        "region": "habitat",
+        "position": {
+          "x": 0,
+          "y": 0,
+          "z": -14
+        },
+        "cometa": {
+          "enabled": true,
+          "mode": "follow",
+          "effectiveMode": "follow",
+          "pressurized": false,
+          "clip": "Idle",
+          "position": {
+            "x": 1.45,
+            "y": 0,
+            "z": -14.45
+          }
+        },
+        "canvas": {
+          "width": 426,
+          "height": 266
+        },
+        "metrics": {
+          "engine": "WebGL 2",
+          "fps": 1,
+          "meshes": 448,
+          "activeMeshes": 411,
+          "drawCalls": 398,
+          "region": "habitat",
+          "frameTimeMs": 3764.9,
+          "p95FrameTimeMs": 3764.9,
+          "triangles": 137166
+        }
+      }
+    },
+    {
+      "file": "docs/demo/fixture-captures/fixture-03-habitat-crew.png",
+      "fixture": "habitat",
+      "description": "Habitat crew closer to console, staged pose.",
+      "snapshot": {
+        "region": "habitat",
+        "position": {
+          "x": 0,
+          "y": 0,
+          "z": -6
+        },
+        "cometa": {
+          "enabled": true,
+          "mode": "follow",
+          "effectiveMode": "follow",
+          "pressurized": false,
+          "clip": "Idle",
+          "position": {
+            "x": 1.45,
+            "y": 0,
+            "z": -6.45
+          }
+        },
+        "canvas": {
+          "width": 426,
+          "height": 266
+        },
+        "metrics": {
+          "engine": "WebGL 2",
+          "fps": 1,
+          "meshes": 448,
+          "activeMeshes": 319,
+          "drawCalls": 308,
+          "region": "habitat",
+          "frameTimeMs": 2263,
+          "p95FrameTimeMs": 2263,
+          "triangles": 106654
+        }
+      }
+    },
+    {
+      "file": "docs/demo/fixture-captures/fixture-04-canyon.png",
+      "fixture": "canyon",
+      "description": "Canyon after Scout repair, staged pose.",
+      "snapshot": {
+        "region": "canyon",
+        "position": {
+          "x": 5,
+          "y": -0.36,
+          "z": 4
+        },
+        "cometa": {
+          "enabled": true,
+          "mode": "follow",
+          "effectiveMode": "follow",
+          "pressurized": false,
+          "clip": "Idle",
+          "position": {
+            "x": 6.45,
+            "y": -0.36,
+            "z": 3.55
+          }
+        },
+        "canvas": {
+          "width": 426,
+          "height": 266
+        },
+        "metrics": {
+          "engine": "WebGL 2",
+          "fps": 1,
+          "meshes": 176,
+          "activeMeshes": 120,
+          "drawCalls": 116,
+          "region": "canyon",
+          "frameTimeMs": 4194.6,
+          "p95FrameTimeMs": 4194.6,
+          "triangles": 56294
+        }
+      }
+    },
+    {
+      "file": "docs/demo/fixture-captures/fixture-05-greenhouse.png",
+      "fixture": "greenhouse",
+      "description": "Greenhouse after simulated crop growth and harvest, staged pose.",
+      "snapshot": {
+        "region": "greenhouse",
+        "position": {
+          "x": 0,
+          "y": 0,
+          "z": -5
+        },
+        "cometa": {
+          "enabled": true,
+          "mode": "follow",
+          "effectiveMode": "follow",
+          "pressurized": true,
+          "clip": "Idle",
+          "position": {
+            "x": 1.45,
+            "y": 0,
+            "z": -5.45
+          }
+        },
+        "canvas": {
+          "width": 426,
+          "height": 266
+        },
+        "metrics": {
+          "engine": "WebGL 2",
+          "fps": 1,
+          "meshes": 448,
+          "activeMeshes": 428,
+          "drawCalls": 423,
+          "region": "greenhouse",
+          "frameTimeMs": 3252,
+          "p95FrameTimeMs": 3252,
+          "triangles": 101396
+        }
+      }
+    },
+    {
+      "file": "docs/demo/fixture-captures/fixture-06-mobile.png",
+      "fixture": "academy",
+      "description": "Mobile viewport, staged academy pose.",
+      "snapshot": {
+        "region": "academy",
+        "position": {
+          "x": 0,
+          "y": 0,
+          "z": -10
+        },
+        "cometa": {
+          "enabled": true,
+          "mode": "follow",
+          "effectiveMode": "follow",
+          "pressurized": true,
+          "clip": "Idle",
+          "position": {
+            "x": 1.45,
+            "y": 0,
+            "z": -10.45
+          }
+        },
+        "canvas": {
+          "width": 130,
+          "height": 281
+        },
+        "metrics": {
+          "engine": "WebGL 2",
+          "fps": 1,
+          "meshes": 209,
+          "activeMeshes": 109,
+          "drawCalls": 104,
+          "region": "academy",
+          "frameTimeMs": 20.8,
+          "p95FrameTimeMs": 2751.5,
+          "triangles": 41410
+        }
+      }
+    }
+  ],
+  "distIndexSha256": "afa9a755b19cd3e3880664bfa7164e86796db428250038d18623dda9c51b69c5",
+  "knownIssues": [
+    "Canyon target label can still say Scout avariado after the Scout is recruited; observed in a staged screenshot, not verified by a dedicated assertion."
+  ],
+  "finishedAt": "2026-11-15T00:16:04.106Z"
+}

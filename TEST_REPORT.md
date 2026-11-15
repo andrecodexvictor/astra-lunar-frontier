@@ -42,3 +42,11 @@ Orbital movement is assisted, not 6DoF. Terrain is procedural artistic geography
 ## Published snapshots
 
 The original public Site is version 5 and the candidate Site is version 1. `docs/PUBLICATIONS.json` maps each native successful deployment to its exact Sites source commit and GitHub snapshot. Later changes record publication metadata and verification only; the game source is unchanged. The final `npm run check` and `npm run audit:deps -- --json` are run after these documentation updates, with outputs in `docs/demo/evidence/`. No GitHub Actions result or new physical-GPU test is implied.
+
+## Child-facing HUD and presentation batch — 15 November 2026
+
+The new application commit is `9a6c65f62b0ecdf6c36369411077e10b18e19dff`. Four main resource cards now show real graphical meters and qualitative states; exact values remain in accessible descriptions and scientific inspection. Low reserves produce a static, non-flashing red edge and an authored Cometa reminder, with PIP fallback. Simulation rates and accounting are unchanged. Three targeted HUD tests and typecheck passed before integration; the regenerated final-check records carry the full batch result.
+
+A new staged Chromium/SwiftShader audit passed **16 checks** and produced **seven fresh screenshots**. It checks main-bar labels/fills/accessible values, desktop/mobile geometry, pre-start warning suppression, actual low-reserve state created through simulation ticks and Cometa/PIP routing. HTTP, network, console and JavaScript error counts were zero. The prior pre-bar report is retained as `docs/demo/evidence/VISUAL_FIXTURE_PRE_BARS.json`. This does not replace the still-incomplete full-route E2E or pending hardware-GPU acceptance.
+
+The export adds thirteen AI-generated production concept boards and a 30-slide/180-second presentation. Photo references in the artwork are fictional; voice, photo-avatar generation, wearable brooches, a parental app and multiplayer remain proposed features. The game remains a simpler demonstration. Presentation page counts, timings, source notes, package hashes and local launcher checks are recorded separately in `docs/presentation/EXPORT_VERIFICATION.json` when export completes.

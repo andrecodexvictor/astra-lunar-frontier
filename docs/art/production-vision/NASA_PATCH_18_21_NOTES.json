@@ -1,0 +1,10 @@
+{
+  "method": "Targeted AI edits of the existing AI-generated concept boards, visually inspected after generation.",
+  "review": {
+    "18-knowledge-badges-uniform.png": "Patch on astronaut arm and close-up; six badges retained.",
+    "19-family-companion-app.png": "Patch on fictional astronaut arm, separate from family clothing and app interface.",
+    "20-worlds-next-destinations.png": "Patches on fictional astronaut arms in four panels; outdoor helmets and enclosed Mars greenhouse retained.",
+    "21-character-motion-adventure.png": "Patch on main fictional astronaut arm; motion poses retained."
+  },
+  "context": "Each board retains AI concept label and adds projeto independente; NASA insignia appears as costume detail, separate from ASTRA branding."
+}

@@ -2,8 +2,8 @@
   "kind": "staged_visual_fixture_audit",
   "status": "passed",
   "warning": "Staged saves and camera placement; no navigation, full E2E, hardware GPU or performance acceptance is implied.",
-  "startedAt": "2026-11-15T00:12:53.276Z",
-  "commit": "a239c952675598253a4c5fa4497f7c45273714f9",
+  "startedAt": "2026-11-15T11:10:49.768Z",
+  "commit": "9a6c65f62b0ecdf6c36369411077e10b18e19dff",
   "node": "v24.22.1",
   "os": "linux 6.18.57 x64",
   "quality": "low",
@@ -17,7 +17,7 @@
       "--use-angle=swiftshader",
       "--enable-unsafe-swiftshader",
       "--remote-debugging-port=0",
-      "--user-data-dir=/tmp/astra-fixture-2BcmUy",
+      "--user-data-dir=/tmp/astra-fixture-ETHlTk",
       "--no-first-run",
       "--no-default-browser-check",
       "about:blank"
@@ -71,6 +71,14 @@
       "region": "habitat",
       "tick": 31,
       "production": "createGame/applyAction/stepGame; no direct simulation resource edits"
+    },
+    {
+      "name": "lowReserve",
+      "simulationHash": "73b3ebca",
+      "phase": "academy",
+      "region": "academy",
+      "tick": 26,
+      "production": "createGame/applyAction/stepGame; no direct simulation resource edits"
     }
   ],
   "checks": [
@@ -80,12 +88,999 @@
       "detail": "Reloaded unstarted page through browser navigation."
     },
     {
+      "name": "pre-start-no-reserve-alarm",
+      "passed": true,
+      "detail": "No active-game warning before expedition begins."
+    },
+    {
       "name": "favicon-available",
       "passed": true,
       "detail": {
         "url": "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='30' fill='%230a1520' stroke='%236ce5f5' stroke-width='4'/%3E%3Cpath d='M32 14L46 48H39L36 40H28L25 48H18L32 14ZM30 34H34L32 26L30 34Z' fill='%23ffb85c'/%3E%3C/svg%3E",
         "status": 200
       }
+    },
+    {
+      "name": "hud-desktop-four-accessible-meters",
+      "passed": true,
+      "detail": {
+        "viewport": {
+          "width": 1280,
+          "height": 800
+        },
+        "cards": [
+          {
+            "text": "◉ O₂\nBoa",
+            "card": {
+              "left": 845,
+              "top": 22.859375,
+              "right": 941,
+              "bottom": 69.0625,
+              "width": 96,
+              "height": 46.203125
+            },
+            "track": {
+              "left": 858,
+              "top": 43.65625,
+              "right": 930,
+              "bottom": 50.65625,
+              "width": 72,
+              "height": 7
+            },
+            "fill": {
+              "left": 858,
+              "top": 43.65625,
+              "right": 930,
+              "bottom": 50.65625,
+              "width": 72,
+              "height": 7
+            },
+            "label": "O₂",
+            "min": "0",
+            "max": "0.5",
+            "now": "0.5",
+            "exact": "O₂: 0.5 kg; referência visual 0.5 kg (escala de exibição, não capacidade de armazenamento); Boa",
+            "title": "O₂: 0.5 kg; referência visual 0.5 kg (escala de exibição, não capacidade de armazenamento); Boa",
+            "scrollWidth": 92,
+            "clientWidth": 92,
+            "scrollHeight": 44,
+            "clientHeight": 44
+          },
+          {
+            "text": "⚡ ENERGIA\nAtenção",
+            "card": {
+              "left": 949,
+              "top": 22.859375,
+              "right": 1045,
+              "bottom": 69.0625,
+              "width": 96,
+              "height": 46.203125
+            },
+            "track": {
+              "left": 962,
+              "top": 43.65625,
+              "right": 1034,
+              "bottom": 50.65625,
+              "width": 72,
+              "height": 7
+            },
+            "fill": {
+              "left": 962,
+              "top": 43.65625,
+              "right": 996.90625,
+              "bottom": 50.65625,
+              "width": 34.90625,
+              "height": 7
+            },
+            "label": "ENERGIA",
+            "min": "0",
+            "max": "12",
+            "now": "5.82",
+            "exact": "ENERGIA: 5.82 kWh; referência visual 12 kWh (escala de exibição, não capacidade de armazenamento); Atenção",
+            "title": "ENERGIA: 5.82 kWh; referência visual 12 kWh (escala de exibição, não capacidade de armazenamento); Atenção",
+            "scrollWidth": 92,
+            "clientWidth": 92,
+            "scrollHeight": 44,
+            "clientHeight": 44
+          },
+          {
+            "text": "💧 ÁGUA\nBoa",
+            "card": {
+              "left": 1053,
+              "top": 22.859375,
+              "right": 1149,
+              "bottom": 69.0625,
+              "width": 96,
+              "height": 46.203125
+            },
+            "track": {
+              "left": 1066,
+              "top": 43.65625,
+              "right": 1138,
+              "bottom": 50.65625,
+              "width": 72,
+              "height": 7
+            },
+            "fill": {
+              "left": 1066,
+              "top": 43.65625,
+              "right": 1138,
+              "bottom": 50.65625,
+              "width": 72,
+              "height": 7
+            },
+            "label": "ÁGUA",
+            "min": "0",
+            "max": "5",
+            "now": "5",
+            "exact": "ÁGUA: 5 kg; referência visual 5 kg (escala de exibição, não capacidade de armazenamento); Boa",
+            "title": "ÁGUA: 5 kg; referência visual 5 kg (escala de exibição, não capacidade de armazenamento); Boa",
+            "scrollWidth": 92,
+            "clientWidth": 92,
+            "scrollHeight": 44,
+            "clientHeight": 44
+          },
+          {
+            "text": "🌱 ALIMENTO\nBoa",
+            "card": {
+              "left": 1157,
+              "top": 22.859375,
+              "right": 1253,
+              "bottom": 69.0625,
+              "width": 96,
+              "height": 46.203125
+            },
+            "track": {
+              "left": 1170,
+              "top": 43.65625,
+              "right": 1242,
+              "bottom": 50.65625,
+              "width": 72,
+              "height": 7
+            },
+            "fill": {
+              "left": 1170,
+              "top": 43.65625,
+              "right": 1242,
+              "bottom": 50.65625,
+              "width": 72,
+              "height": 7
+            },
+            "label": "ALIMENTO",
+            "min": "0",
+            "max": "3",
+            "now": "3",
+            "exact": "ALIMENTO: 3 kg; referência visual 3 kg (escala de exibição, não capacidade de armazenamento); Boa",
+            "title": "ALIMENTO: 3 kg; referência visual 3 kg (escala de exibição, não capacidade de armazenamento); Boa",
+            "scrollWidth": 92,
+            "clientWidth": 92,
+            "scrollHeight": 44,
+            "clientHeight": 44
+          }
+        ]
+      }
+    },
+    {
+      "name": "hud-desktop-no-visible-amounts",
+      "passed": true,
+      "detail": [
+        "◉ O₂\nBoa",
+        "⚡ ENERGIA\nAtenção",
+        "💧 ÁGUA\nBoa",
+        "🌱 ALIMENTO\nBoa"
+      ]
+    },
+    {
+      "name": "hud-desktop-exact-accessible-values-and-filled-tracks",
+      "passed": true,
+      "detail": [
+        {
+          "text": "◉ O₂\nBoa",
+          "card": {
+            "left": 845,
+            "top": 22.859375,
+            "right": 941,
+            "bottom": 69.0625,
+            "width": 96,
+            "height": 46.203125
+          },
+          "track": {
+            "left": 858,
+            "top": 43.65625,
+            "right": 930,
+            "bottom": 50.65625,
+            "width": 72,
+            "height": 7
+          },
+          "fill": {
+            "left": 858,
+            "top": 43.65625,
+            "right": 930,
+            "bottom": 50.65625,
+            "width": 72,
+            "height": 7
+          },
+          "label": "O₂",
+          "min": "0",
+          "max": "0.5",
+          "now": "0.5",
+          "exact": "O₂: 0.5 kg; referência visual 0.5 kg (escala de exibição, não capacidade de armazenamento); Boa",
+          "title": "O₂: 0.5 kg; referência visual 0.5 kg (escala de exibição, não capacidade de armazenamento); Boa",
+          "scrollWidth": 92,
+          "clientWidth": 92,
+          "scrollHeight": 44,
+          "clientHeight": 44
+        },
+        {
+          "text": "⚡ ENERGIA\nAtenção",
+          "card": {
+            "left": 949,
+            "top": 22.859375,
+            "right": 1045,
+            "bottom": 69.0625,
+            "width": 96,
+            "height": 46.203125
+          },
+          "track": {
+            "left": 962,
+            "top": 43.65625,
+            "right": 1034,
+            "bottom": 50.65625,
+            "width": 72,
+            "height": 7
+          },
+          "fill": {
+            "left": 962,
+            "top": 43.65625,
+            "right": 996.90625,
+            "bottom": 50.65625,
+            "width": 34.90625,
+            "height": 7
+          },
+          "label": "ENERGIA",
+          "min": "0",
+          "max": "12",
+          "now": "5.82",
+          "exact": "ENERGIA: 5.82 kWh; referência visual 12 kWh (escala de exibição, não capacidade de armazenamento); Atenção",
+          "title": "ENERGIA: 5.82 kWh; referência visual 12 kWh (escala de exibição, não capacidade de armazenamento); Atenção",
+          "scrollWidth": 92,
+          "clientWidth": 92,
+          "scrollHeight": 44,
+          "clientHeight": 44
+        },
+        {
+          "text": "💧 ÁGUA\nBoa",
+          "card": {
+            "left": 1053,
+            "top": 22.859375,
+            "right": 1149,
+            "bottom": 69.0625,
+            "width": 96,
+            "height": 46.203125
+          },
+          "track": {
+            "left": 1066,
+            "top": 43.65625,
+            "right": 1138,
+            "bottom": 50.65625,
+            "width": 72,
+            "height": 7
+          },
+          "fill": {
+            "left": 1066,
+            "top": 43.65625,
+            "right": 1138,
+            "bottom": 50.65625,
+            "width": 72,
+            "height": 7
+          },
+          "label": "ÁGUA",
+          "min": "0",
+          "max": "5",
+          "now": "5",
+          "exact": "ÁGUA: 5 kg; referência visual 5 kg (escala de exibição, não capacidade de armazenamento); Boa",
+          "title": "ÁGUA: 5 kg; referência visual 5 kg (escala de exibição, não capacidade de armazenamento); Boa",
+          "scrollWidth": 92,
+          "clientWidth": 92,
+          "scrollHeight": 44,
+          "clientHeight": 44
+        },
+        {
+          "text": "🌱 ALIMENTO\nBoa",
+          "card": {
+            "left": 1157,
+            "top": 22.859375,
+            "right": 1253,
+            "bottom": 69.0625,
+            "width": 96,
+            "height": 46.203125
+          },
+          "track": {
+            "left": 1170,
+            "top": 43.65625,
+            "right": 1242,
+            "bottom": 50.65625,
+            "width": 72,
+            "height": 7
+          },
+          "fill": {
+            "left": 1170,
+            "top": 43.65625,
+            "right": 1242,
+            "bottom": 50.65625,
+            "width": 72,
+            "height": 7
+          },
+          "label": "ALIMENTO",
+          "min": "0",
+          "max": "3",
+          "now": "3",
+          "exact": "ALIMENTO: 3 kg; referência visual 3 kg (escala de exibição, não capacidade de armazenamento); Boa",
+          "title": "ALIMENTO: 3 kg; referência visual 3 kg (escala de exibição, não capacidade de armazenamento); Boa",
+          "scrollWidth": 92,
+          "clientWidth": 92,
+          "scrollHeight": 44,
+          "clientHeight": 44
+        }
+      ]
+    },
+    {
+      "name": "hud-desktop-cards-not-clipped",
+      "passed": true,
+      "detail": {
+        "viewport": {
+          "width": 1280,
+          "height": 800
+        },
+        "cards": [
+          {
+            "text": "◉ O₂\nBoa",
+            "card": {
+              "left": 845,
+              "top": 22.859375,
+              "right": 941,
+              "bottom": 69.0625,
+              "width": 96,
+              "height": 46.203125
+            },
+            "track": {
+              "left": 858,
+              "top": 43.65625,
+              "right": 930,
+              "bottom": 50.65625,
+              "width": 72,
+              "height": 7
+            },
+            "fill": {
+              "left": 858,
+              "top": 43.65625,
+              "right": 930,
+              "bottom": 50.65625,
+              "width": 72,
+              "height": 7
+            },
+            "label": "O₂",
+            "min": "0",
+            "max": "0.5",
+            "now": "0.5",
+            "exact": "O₂: 0.5 kg; referência visual 0.5 kg (escala de exibição, não capacidade de armazenamento); Boa",
+            "title": "O₂: 0.5 kg; referência visual 0.5 kg (escala de exibição, não capacidade de armazenamento); Boa",
+            "scrollWidth": 92,
+            "clientWidth": 92,
+            "scrollHeight": 44,
+            "clientHeight": 44
+          },
+          {
+            "text": "⚡ ENERGIA\nAtenção",
+            "card": {
+              "left": 949,
+              "top": 22.859375,
+              "right": 1045,
+              "bottom": 69.0625,
+              "width": 96,
+              "height": 46.203125
+            },
+            "track": {
+              "left": 962,
+              "top": 43.65625,
+              "right": 1034,
+              "bottom": 50.65625,
+              "width": 72,
+              "height": 7
+            },
+            "fill": {
+              "left": 962,
+              "top": 43.65625,
+              "right": 996.90625,
+              "bottom": 50.65625,
+              "width": 34.90625,
+              "height": 7
+            },
+            "label": "ENERGIA",
+            "min": "0",
+            "max": "12",
+            "now": "5.82",
+            "exact": "ENERGIA: 5.82 kWh; referência visual 12 kWh (escala de exibição, não capacidade de armazenamento); Atenção",
+            "title": "ENERGIA: 5.82 kWh; referência visual 12 kWh (escala de exibição, não capacidade de armazenamento); Atenção",
+            "scrollWidth": 92,
+            "clientWidth": 92,
+            "scrollHeight": 44,
+            "clientHeight": 44
+          },
+          {
+            "text": "💧 ÁGUA\nBoa",
+            "card": {
+              "left": 1053,
+              "top": 22.859375,
+              "right": 1149,
+              "bottom": 69.0625,
+              "width": 96,
+              "height": 46.203125
+            },
+            "track": {
+              "left": 1066,
+              "top": 43.65625,
+              "right": 1138,
+              "bottom": 50.65625,
+              "width": 72,
+              "height": 7
+            },
+            "fill": {
+              "left": 1066,
+              "top": 43.65625,
+              "right": 1138,
+              "bottom": 50.65625,
+              "width": 72,
+              "height": 7
+            },
+            "label": "ÁGUA",
+            "min": "0",
+            "max": "5",
+            "now": "5",
+            "exact": "ÁGUA: 5 kg; referência visual 5 kg (escala de exibição, não capacidade de armazenamento); Boa",
+            "title": "ÁGUA: 5 kg; referência visual 5 kg (escala de exibição, não capacidade de armazenamento); Boa",
+            "scrollWidth": 92,
+            "clientWidth": 92,
+            "scrollHeight": 44,
+            "clientHeight": 44
+          },
+          {
+            "text": "🌱 ALIMENTO\nBoa",
+            "card": {
+              "left": 1157,
+              "top": 22.859375,
+              "right": 1253,
+              "bottom": 69.0625,
+              "width": 96,
+              "height": 46.203125
+            },
+            "track": {
+              "left": 1170,
+              "top": 43.65625,
+              "right": 1242,
+              "bottom": 50.65625,
+              "width": 72,
+              "height": 7
+            },
+            "fill": {
+              "left": 1170,
+              "top": 43.65625,
+              "right": 1242,
+              "bottom": 50.65625,
+              "width": 72,
+              "height": 7
+            },
+            "label": "ALIMENTO",
+            "min": "0",
+            "max": "3",
+            "now": "3",
+            "exact": "ALIMENTO: 3 kg; referência visual 3 kg (escala de exibição, não capacidade de armazenamento); Boa",
+            "title": "ALIMENTO: 3 kg; referência visual 3 kg (escala de exibição, não capacidade de armazenamento); Boa",
+            "scrollWidth": 92,
+            "clientWidth": 92,
+            "scrollHeight": 44,
+            "clientHeight": 44
+          }
+        ]
+      }
+    },
+    {
+      "name": "hud-mobile-four-accessible-meters",
+      "passed": true,
+      "detail": {
+        "viewport": {
+          "width": 390,
+          "height": 844
+        },
+        "cards": [
+          {
+            "text": "◉ O₂\nBoa",
+            "card": {
+              "left": 17,
+              "top": 61,
+              "right": 103,
+              "bottom": 99.59375,
+              "width": 86,
+              "height": 38.59375
+            },
+            "track": {
+              "left": 24,
+              "top": 77.1875,
+              "right": 97,
+              "bottom": 84.1875,
+              "width": 73,
+              "height": 7
+            },
+            "fill": {
+              "left": 24,
+              "top": 77.1875,
+              "right": 97,
+              "bottom": 84.1875,
+              "width": 73,
+              "height": 7
+            },
+            "label": "O₂",
+            "min": "0",
+            "max": "0.5",
+            "now": "0.5",
+            "exact": "O₂: 0.5 kg; referência visual 0.5 kg (escala de exibição, não capacidade de armazenamento); Boa",
+            "title": "O₂: 0.5 kg; referência visual 0.5 kg (escala de exibição, não capacidade de armazenamento); Boa",
+            "scrollWidth": 83,
+            "clientWidth": 83,
+            "scrollHeight": 37,
+            "clientHeight": 37
+          },
+          {
+            "text": "⚡ ENERGIA\nAtenção",
+            "card": {
+              "left": 107,
+              "top": 61,
+              "right": 193,
+              "bottom": 99.59375,
+              "width": 86,
+              "height": 38.59375
+            },
+            "track": {
+              "left": 114,
+              "top": 77.1875,
+              "right": 187,
+              "bottom": 84.1875,
+              "width": 73,
+              "height": 7
+            },
+            "fill": {
+              "left": 114,
+              "top": 77.1875,
+              "right": 149.390625,
+              "bottom": 84.1875,
+              "width": 35.390625,
+              "height": 7
+            },
+            "label": "ENERGIA",
+            "min": "0",
+            "max": "12",
+            "now": "5.82",
+            "exact": "ENERGIA: 5.82 kWh; referência visual 12 kWh (escala de exibição, não capacidade de armazenamento); Atenção",
+            "title": "ENERGIA: 5.82 kWh; referência visual 12 kWh (escala de exibição, não capacidade de armazenamento); Atenção",
+            "scrollWidth": 83,
+            "clientWidth": 83,
+            "scrollHeight": 37,
+            "clientHeight": 37
+          },
+          {
+            "text": "💧 ÁGUA\nBoa",
+            "card": {
+              "left": 197,
+              "top": 61,
+              "right": 283,
+              "bottom": 99.59375,
+              "width": 86,
+              "height": 38.59375
+            },
+            "track": {
+              "left": 204,
+              "top": 77.1875,
+              "right": 277,
+              "bottom": 84.1875,
+              "width": 73,
+              "height": 7
+            },
+            "fill": {
+              "left": 204,
+              "top": 77.1875,
+              "right": 277,
+              "bottom": 84.1875,
+              "width": 73,
+              "height": 7
+            },
+            "label": "ÁGUA",
+            "min": "0",
+            "max": "5",
+            "now": "5",
+            "exact": "ÁGUA: 5 kg; referência visual 5 kg (escala de exibição, não capacidade de armazenamento); Boa",
+            "title": "ÁGUA: 5 kg; referência visual 5 kg (escala de exibição, não capacidade de armazenamento); Boa",
+            "scrollWidth": 83,
+            "clientWidth": 83,
+            "scrollHeight": 37,
+            "clientHeight": 37
+          },
+          {
+            "text": "🌱 ALIMENTO\nBoa",
+            "card": {
+              "left": 287,
+              "top": 61,
+              "right": 373,
+              "bottom": 99.59375,
+              "width": 86,
+              "height": 38.59375
+            },
+            "track": {
+              "left": 294,
+              "top": 77.1875,
+              "right": 367,
+              "bottom": 84.1875,
+              "width": 73,
+              "height": 7
+            },
+            "fill": {
+              "left": 294,
+              "top": 77.1875,
+              "right": 367,
+              "bottom": 84.1875,
+              "width": 73,
+              "height": 7
+            },
+            "label": "ALIMENTO",
+            "min": "0",
+            "max": "3",
+            "now": "3",
+            "exact": "ALIMENTO: 3 kg; referência visual 3 kg (escala de exibição, não capacidade de armazenamento); Boa",
+            "title": "ALIMENTO: 3 kg; referência visual 3 kg (escala de exibição, não capacidade de armazenamento); Boa",
+            "scrollWidth": 83,
+            "clientWidth": 83,
+            "scrollHeight": 37,
+            "clientHeight": 37
+          }
+        ]
+      }
+    },
+    {
+      "name": "hud-mobile-no-visible-amounts",
+      "passed": true,
+      "detail": [
+        "◉ O₂\nBoa",
+        "⚡ ENERGIA\nAtenção",
+        "💧 ÁGUA\nBoa",
+        "🌱 ALIMENTO\nBoa"
+      ]
+    },
+    {
+      "name": "hud-mobile-exact-accessible-values-and-filled-tracks",
+      "passed": true,
+      "detail": [
+        {
+          "text": "◉ O₂\nBoa",
+          "card": {
+            "left": 17,
+            "top": 61,
+            "right": 103,
+            "bottom": 99.59375,
+            "width": 86,
+            "height": 38.59375
+          },
+          "track": {
+            "left": 24,
+            "top": 77.1875,
+            "right": 97,
+            "bottom": 84.1875,
+            "width": 73,
+            "height": 7
+          },
+          "fill": {
+            "left": 24,
+            "top": 77.1875,
+            "right": 97,
+            "bottom": 84.1875,
+            "width": 73,
+            "height": 7
+          },
+          "label": "O₂",
+          "min": "0",
+          "max": "0.5",
+          "now": "0.5",
+          "exact": "O₂: 0.5 kg; referência visual 0.5 kg (escala de exibição, não capacidade de armazenamento); Boa",
+          "title": "O₂: 0.5 kg; referência visual 0.5 kg (escala de exibição, não capacidade de armazenamento); Boa",
+          "scrollWidth": 83,
+          "clientWidth": 83,
+          "scrollHeight": 37,
+          "clientHeight": 37
+        },
+        {
+          "text": "⚡ ENERGIA\nAtenção",
+          "card": {
+            "left": 107,
+            "top": 61,
+            "right": 193,
+            "bottom": 99.59375,
+            "width": 86,
+            "height": 38.59375
+          },
+          "track": {
+            "left": 114,
+            "top": 77.1875,
+            "right": 187,
+            "bottom": 84.1875,
+            "width": 73,
+            "height": 7
+          },
+          "fill": {
+            "left": 114,
+            "top": 77.1875,
+            "right": 149.390625,
+            "bottom": 84.1875,
+            "width": 35.390625,
+            "height": 7
+          },
+          "label": "ENERGIA",
+          "min": "0",
+          "max": "12",
+          "now": "5.82",
+          "exact": "ENERGIA: 5.82 kWh; referência visual 12 kWh (escala de exibição, não capacidade de armazenamento); Atenção",
+          "title": "ENERGIA: 5.82 kWh; referência visual 12 kWh (escala de exibição, não capacidade de armazenamento); Atenção",
+          "scrollWidth": 83,
+          "clientWidth": 83,
+          "scrollHeight": 37,
+          "clientHeight": 37
+        },
+        {
+          "text": "💧 ÁGUA\nBoa",
+          "card": {
+            "left": 197,
+            "top": 61,
+            "right": 283,
+            "bottom": 99.59375,
+            "width": 86,
+            "height": 38.59375
+          },
+          "track": {
+            "left": 204,
+            "top": 77.1875,
+            "right": 277,
+            "bottom": 84.1875,
+            "width": 73,
+            "height": 7
+          },
+          "fill": {
+            "left": 204,
+            "top": 77.1875,
+            "right": 277,
+            "bottom": 84.1875,
+            "width": 73,
+            "height": 7
+          },
+          "label": "ÁGUA",
+          "min": "0",
+          "max": "5",
+          "now": "5",
+          "exact": "ÁGUA: 5 kg; referência visual 5 kg (escala de exibição, não capacidade de armazenamento); Boa",
+          "title": "ÁGUA: 5 kg; referência visual 5 kg (escala de exibição, não capacidade de armazenamento); Boa",
+          "scrollWidth": 83,
+          "clientWidth": 83,
+          "scrollHeight": 37,
+          "clientHeight": 37
+        },
+        {
+          "text": "🌱 ALIMENTO\nBoa",
+          "card": {
+            "left": 287,
+            "top": 61,
+            "right": 373,
+            "bottom": 99.59375,
+            "width": 86,
+            "height": 38.59375
+          },
+          "track": {
+            "left": 294,
+            "top": 77.1875,
+            "right": 367,
+            "bottom": 84.1875,
+            "width": 73,
+            "height": 7
+          },
+          "fill": {
+            "left": 294,
+            "top": 77.1875,
+            "right": 367,
+            "bottom": 84.1875,
+            "width": 73,
+            "height": 7
+          },
+          "label": "ALIMENTO",
+          "min": "0",
+          "max": "3",
+          "now": "3",
+          "exact": "ALIMENTO: 3 kg; referência visual 3 kg (escala de exibição, não capacidade de armazenamento); Boa",
+          "title": "ALIMENTO: 3 kg; referência visual 3 kg (escala de exibição, não capacidade de armazenamento); Boa",
+          "scrollWidth": 83,
+          "clientWidth": 83,
+          "scrollHeight": 37,
+          "clientHeight": 37
+        }
+      ]
+    },
+    {
+      "name": "hud-mobile-cards-not-clipped",
+      "passed": true,
+      "detail": {
+        "viewport": {
+          "width": 390,
+          "height": 844
+        },
+        "cards": [
+          {
+            "text": "◉ O₂\nBoa",
+            "card": {
+              "left": 17,
+              "top": 61,
+              "right": 103,
+              "bottom": 99.59375,
+              "width": 86,
+              "height": 38.59375
+            },
+            "track": {
+              "left": 24,
+              "top": 77.1875,
+              "right": 97,
+              "bottom": 84.1875,
+              "width": 73,
+              "height": 7
+            },
+            "fill": {
+              "left": 24,
+              "top": 77.1875,
+              "right": 97,
+              "bottom": 84.1875,
+              "width": 73,
+              "height": 7
+            },
+            "label": "O₂",
+            "min": "0",
+            "max": "0.5",
+            "now": "0.5",
+            "exact": "O₂: 0.5 kg; referência visual 0.5 kg (escala de exibição, não capacidade de armazenamento); Boa",
+            "title": "O₂: 0.5 kg; referência visual 0.5 kg (escala de exibição, não capacidade de armazenamento); Boa",
+            "scrollWidth": 83,
+            "clientWidth": 83,
+            "scrollHeight": 37,
+            "clientHeight": 37
+          },
+          {
+            "text": "⚡ ENERGIA\nAtenção",
+            "card": {
+              "left": 107,
+              "top": 61,
+              "right": 193,
+              "bottom": 99.59375,
+              "width": 86,
+              "height": 38.59375
+            },
+            "track": {
+              "left": 114,
+              "top": 77.1875,
+              "right": 187,
+              "bottom": 84.1875,
+              "width": 73,
+              "height": 7
+            },
+            "fill": {
+              "left": 114,
+              "top": 77.1875,
+              "right": 149.390625,
+              "bottom": 84.1875,
+              "width": 35.390625,
+              "height": 7
+            },
+            "label": "ENERGIA",
+            "min": "0",
+            "max": "12",
+            "now": "5.82",
+            "exact": "ENERGIA: 5.82 kWh; referência visual 12 kWh (escala de exibição, não capacidade de armazenamento); Atenção",
+            "title": "ENERGIA: 5.82 kWh; referência visual 12 kWh (escala de exibição, não capacidade de armazenamento); Atenção",
+            "scrollWidth": 83,
+            "clientWidth": 83,
+            "scrollHeight": 37,
+            "clientHeight": 37
+          },
+          {
+            "text": "💧 ÁGUA\nBoa",
+            "card": {
+              "left": 197,
+              "top": 61,
+              "right": 283,
+              "bottom": 99.59375,
+              "width": 86,
+              "height": 38.59375
+            },
+            "track": {
+              "left": 204,
+              "top": 77.1875,
+              "right": 277,
+              "bottom": 84.1875,
+              "width": 73,
+              "height": 7
+            },
+            "fill": {
+              "left": 204,
+              "top": 77.1875,
+              "right": 277,
+              "bottom": 84.1875,
+              "width": 73,
+              "height": 7
+            },
+            "label": "ÁGUA",
+            "min": "0",
+            "max": "5",
+            "now": "5",
+            "exact": "ÁGUA: 5 kg; referência visual 5 kg (escala de exibição, não capacidade de armazenamento); Boa",
+            "title": "ÁGUA: 5 kg; referência visual 5 kg (escala de exibição, não capacidade de armazenamento); Boa",
+            "scrollWidth": 83,
+            "clientWidth": 83,
+            "scrollHeight": 37,
+            "clientHeight": 37
+          },
+          {
+            "text": "🌱 ALIMENTO\nBoa",
+            "card": {
+              "left": 287,
+              "top": 61,
+              "right": 373,
+              "bottom": 99.59375,
+              "width": 86,
+              "height": 38.59375
+            },
+            "track": {
+              "left": 294,
+              "top": 77.1875,
+              "right": 367,
+              "bottom": 84.1875,
+              "width": 73,
+              "height": 7
+            },
+            "fill": {
+              "left": 294,
+              "top": 77.1875,
+              "right": 367,
+              "bottom": 84.1875,
+              "width": 73,
+              "height": 7
+            },
+            "label": "ALIMENTO",
+            "min": "0",
+            "max": "3",
+            "now": "3",
+            "exact": "ALIMENTO: 3 kg; referência visual 3 kg (escala de exibição, não capacidade de armazenamento); Boa",
+            "title": "ALIMENTO: 3 kg; referência visual 3 kg (escala de exibição, não capacidade de armazenamento); Boa",
+            "scrollWidth": 83,
+            "clientWidth": 83,
+            "scrollHeight": 37,
+            "clientHeight": 37
+          }
+        ]
+      }
+    },
+    {
+      "name": "low-reserve-hud-and-cometa-reminder",
+      "passed": true,
+      "detail": {
+        "alarm": true,
+        "reminder": "A energia está baixa. Confira os painéis e o consumo.",
+        "energy": "ENERGIA: 1.3200000000000016 kWh; referência visual 12 kWh (escala de exibição, não capacidade de armazenamento); Baixa"
+      }
+    },
+    {
+      "name": "low-reserve-pip-fallback-after-cometa-disabled",
+      "passed": true,
+      "detail": "\n      \n      \n      \n      \n      \n      \n      \n      \n      \n      \n      \n      \n      \n      \n      \n      \n      \n    \n      \n        \n          EP.01 • 01/10 • Chegada e vínculo — academia\n        \n        A energia está baixa. Confira os painéis e o consumo.\n        \n          Diálogo\n          Pular opcional ↷\n        \n      "
     },
     {
       "name": "shelter-cometa-pressurized-visible",
@@ -126,7 +1121,7 @@
       }
     },
     {
-      "name": "six-staged-captures",
+      "name": "seven-staged-captures",
       "passed": true,
       "detail": [
         "docs/demo/fixture-captures/fixture-01-academy.png",
@@ -134,7 +1129,8 @@
         "docs/demo/fixture-captures/fixture-03-habitat-crew.png",
         "docs/demo/fixture-captures/fixture-04-canyon.png",
         "docs/demo/fixture-captures/fixture-05-greenhouse.png",
-        "docs/demo/fixture-captures/fixture-06-mobile.png"
+        "docs/demo/fixture-captures/fixture-06-mobile.png",
+        "docs/demo/fixture-captures/fixture-07-resource-alert.png"
       ]
     }
   ],
@@ -174,13 +1170,13 @@
         },
         "metrics": {
           "engine": "WebGL 2",
-          "fps": 1,
+          "fps": 2,
           "meshes": 209,
           "activeMeshes": 167,
           "drawCalls": 160,
           "region": "academy",
-          "frameTimeMs": 665.4,
-          "p95FrameTimeMs": 1856.3,
+          "frameTimeMs": 527.9,
+          "p95FrameTimeMs": 1289,
           "triangles": 53074
         }
       }
@@ -219,8 +1215,8 @@
           "activeMeshes": 411,
           "drawCalls": 398,
           "region": "habitat",
-          "frameTimeMs": 3764.9,
-          "p95FrameTimeMs": 3764.9,
+          "frameTimeMs": 2943.4,
+          "p95FrameTimeMs": 2943.4,
           "triangles": 137166
         }
       }
@@ -259,8 +1255,8 @@
           "activeMeshes": 319,
           "drawCalls": 308,
           "region": "habitat",
-          "frameTimeMs": 2263,
-          "p95FrameTimeMs": 2263,
+          "frameTimeMs": 1825.9,
+          "p95FrameTimeMs": 1825.9,
           "triangles": 106654
         }
       }
@@ -299,8 +1295,8 @@
           "activeMeshes": 120,
           "drawCalls": 116,
           "region": "canyon",
-          "frameTimeMs": 4194.6,
-          "p95FrameTimeMs": 4194.6,
+          "frameTimeMs": 12.8,
+          "p95FrameTimeMs": 2786.1,
           "triangles": 56294
         }
       }
@@ -339,8 +1335,8 @@
           "activeMeshes": 428,
           "drawCalls": 423,
           "region": "greenhouse",
-          "frameTimeMs": 3252,
-          "p95FrameTimeMs": 3252,
+          "frameTimeMs": 26.7,
+          "p95FrameTimeMs": 2223.1,
           "triangles": 101396
         }
       }
@@ -379,16 +1375,56 @@
           "activeMeshes": 109,
           "drawCalls": 104,
           "region": "academy",
-          "frameTimeMs": 20.8,
-          "p95FrameTimeMs": 2751.5,
+          "frameTimeMs": 1423.7,
+          "p95FrameTimeMs": 1423.7,
           "triangles": 41410
+        }
+      }
+    },
+    {
+      "file": "docs/demo/fixture-captures/fixture-07-resource-alert.png",
+      "fixture": "lowReserve",
+      "description": "Low academy battery created by 26 simulated ticks; staged position.",
+      "snapshot": {
+        "region": "academy",
+        "position": {
+          "x": 0,
+          "y": 0,
+          "z": -10
+        },
+        "cometa": {
+          "enabled": true,
+          "mode": "follow",
+          "effectiveMode": "follow",
+          "pressurized": true,
+          "clip": "Idle",
+          "position": {
+            "x": 1.45,
+            "y": 0,
+            "z": -10.45
+          }
+        },
+        "canvas": {
+          "width": 426,
+          "height": 266
+        },
+        "metrics": {
+          "engine": "WebGL 2",
+          "fps": 2,
+          "meshes": 209,
+          "activeMeshes": 167,
+          "drawCalls": 160,
+          "region": "academy",
+          "frameTimeMs": 29.9,
+          "p95FrameTimeMs": 1306.6,
+          "triangles": 53074
         }
       }
     }
   ],
-  "distIndexSha256": "afa9a755b19cd3e3880664bfa7164e86796db428250038d18623dda9c51b69c5",
+  "distIndexSha256": "852fb50f465b062e531905179b295f4070c95afba92f7b2d97b721f753dff825",
   "knownIssues": [
     "Canyon target label can still say Scout avariado after the Scout is recruited; observed in a staged screenshot, not verified by a dedicated assertion."
   ],
-  "finishedAt": "2026-11-15T00:16:04.106Z"
+  "finishedAt": "2026-11-15T11:13:19.357Z"
 }

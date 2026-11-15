@@ -20,3 +20,7 @@ Use Node 24, `npm ci`, `npm run check`, `npm run dev`. No Chrome com WebGL 2 reg
 12. Só teclado: foco visível, ordem de leitura, Tab preso no modal, Esc e retorno ao canvas. Verificar texto maior, redução de movimento, qualidade econômica e contraste. Em viewport menor, testar os controles de toque existentes em um dispositivo real e registrar limitações.
 
 Critérios de falha: tela encoberta, ator invisível, alvo inacessível, softlock, recurso gratuito, passo de tempo em leitura/background, duplicação no reload, erro de carregamento sem feedback, crescimento contínuo de memória ou texto ilegível. Corrigir e repetir o percurso afetado antes de expandir o mundo.
+
+## Atualização das barras — 15/11/2026
+
+A auditoria preparada mais recente (`VISUAL_FIXTURE_REPORT.json`) passou 16 verificações e gerou sete capturas em `fixture-captures/`: quatro barras sem quantidades visíveis, medidas exatas acessíveis, layout desktop/móvel, alerta ausente antes de iniciar, reserva baixa real criada por ticks e lembrete Cometa/PIP. Não houve erro de HTTP, rede, console ou JavaScript. O percurso E2E completo e a GPU física continuam pendentes; o relatório anterior foi preservado em `evidence/VISUAL_FIXTURE_PRE_BARS.json`.

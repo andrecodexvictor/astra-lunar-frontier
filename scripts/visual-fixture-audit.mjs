@@ -21,6 +21,8 @@ function action(s, name, payload) { const r = applyAction(s, name, payload); if 
 function makeFixtures() {
   let s = createGame({ seed: 42 });
   const academy = structuredClone(s);
+  const lowReserve = stepGame(createGame({ seed: 42 }), 26);
+  if (!(lowReserve.academyBattery > 0 && lowReserve.academyBattery <= 1.5 && lowReserve.phase === 'academy')) throw new Error('Low-reserve fixture was not reached safely.');
   s = action(s, 'diagnoseAcademy'); s = action(s, 'shedLoad'); s = stepGame(s, 16);
   s = action(s, 'finishAcademy'); s = action(s, 'collectCargo'); s = action(s, 'land');
   const habitat = structuredClone(s);
@@ -33,7 +35,7 @@ function makeFixtures() {
   s = action(s, 'returnExpedition'); s = action(s, 'travel', { region: 'greenhouse' });
   s = action(s, 'plantCrop'); s = stepGame(s, 180); s = action(s, 'harvest');
   const greenhouse = structuredClone(s);
-  const all = { academy, habitat, canyon, greenhouse, sheltered };
+  const all = { academy, habitat, canyon, greenhouse, sheltered, lowReserve };
   for (const [name, state] of Object.entries(all)) { normalizeGame(state); report.fixtures.push({ name, simulationHash: hashState(state), phase: state.phase, region: state.region, tick: state.tick, production: 'createGame/applyAction/stepGame; no direct simulation resource edits' }); }
   return all;
 }
@@ -103,6 +105,31 @@ async function loadFixture(base, state, pos) {
   await wait(`document.getElementById('modal-layer')?.hidden && window.__ASTRA_WORLD_DEBUG__?.getSnapshot()?.region === ${JSON.stringify(state.region)}`, 60000);
   await evaluate(`new Promise(resolve => requestAnimationFrame(() => requestAnimationFrame(resolve)))`);
 }
+async function auditResourceHud(viewport) {
+  const result = await evaluate(`(() => {
+    const container = document.querySelector('#resources');
+    const cards = Array.from(container?.querySelectorAll('.resource') || []);
+    const rect = r => ({left:r.left, top:r.top, right:r.right, bottom:r.bottom, width:r.width, height:r.height});
+    return { viewport: { width:innerWidth, height:innerHeight }, cards:cards.map(card => {
+      const m=card.querySelector('[role="meter"]'), track=m?.getBoundingClientRect(), fill=m?.firstElementChild?.getBoundingClientRect(), r=card.getBoundingClientRect();
+      return { text:card.innerText, card:rect(r), track:track&&rect(track), fill:fill&&rect(fill),
+        label:m?.getAttribute('aria-label'), min:m?.getAttribute('aria-valuemin'), max:m?.getAttribute('aria-valuemax'),
+        now:m?.getAttribute('aria-valuenow'), exact:m?.getAttribute('aria-valuetext'), title:card.getAttribute('title'),
+        scrollWidth:card.scrollWidth, clientWidth:card.clientWidth, scrollHeight:card.scrollHeight, clientHeight:card.clientHeight };
+    }) };
+  })()`);
+  const cards = result.cards;
+  check(`hud-${viewport}-four-accessible-meters`, cards.length === 4 && ['O₂','ENERGIA','ÁGUA','ALIMENTO'].every(label => cards.some(c => c.label === label)), result);
+  check(`hud-${viewport}-no-visible-amounts`, cards.length === 4 && cards.every(c => !/\d|\bkg\b|kwh/i.test(c.text.replaceAll('O₂',''))), cards.map(c => c.text));
+  check(`hud-${viewport}-exact-accessible-values-and-filled-tracks`, cards.length === 4 && cards.every(c => {
+    const min = Number(c.min), max = Number(c.max), now = Number(c.now), exactMatch = c.exact?.match(/: ([\d.eE+-]+) (kg|kWh);/);
+    const exact = exactMatch ? Number(exactMatch[1]) : NaN;
+    return Number.isFinite(exact) && c.title === c.exact && Number.isFinite(now) && max > min && now >= min && now <= max &&
+      Math.abs(now - Math.max(min, Math.min(max, exact))) < 1e-7 && c.track?.width > 0 && c.track?.height > 0 && c.fill?.width > 0 &&
+      Math.abs(c.fill.width / c.track.width - (now-min)/(max-min)) < 0.03;
+  }), cards);
+  check(`hud-${viewport}-cards-not-clipped`, cards.length === 4 && cards.every(c => c.card.width > 0 && c.card.height > 0 && c.card.left >= -1 && c.card.right <= result.viewport.width + 1 && c.card.top >= -1 && c.card.bottom <= result.viewport.height + 1 && c.scrollWidth <= c.clientWidth + 1 && c.scrollHeight <= c.clientHeight + 1) && cards.every((a,i) => cards.slice(i+1).every(b => a.card.right <= b.card.left + 1 || b.card.right <= a.card.left + 1 || a.card.bottom <= b.card.top + 1 || b.card.bottom <= a.card.top + 1)), result);
+}
 async function capture(name, fixture, description) {
   const snap = await evaluate(`(() => { const s=window.__ASTRA_WORLD_DEBUG__.getSnapshot(); const c=document.getElementById('world'); return {region:s.region, position:s.actors.astronaut.position, cometa:s.cometa, canvas:{width:c.width,height:c.height}, metrics:s.metrics}; })()`);
   const { data } = await cdp.send('Page.captureScreenshot', { format:'png' });
@@ -131,17 +158,25 @@ async function run() {
   report.renderer = await evaluate(`(() => { const gl=document.createElement('canvas').getContext('webgl2'); const d=gl?.getExtension('WEBGL_debug_renderer_info'); return {webgl2:!!gl, unmaskedRenderer:gl&&d?gl.getParameter(d.UNMASKED_RENDERER_WEBGL):null, unmaskedVendor:gl&&d?gl.getParameter(d.UNMASKED_VENDOR_WEBGL):null}; })()`);
   await cdp.send('Page.reload', { ignoreCache:true }); await ready();
   check('pre-start-pagehide-no-save', await evaluate(`localStorage.getItem(${JSON.stringify(saveKey)}) === null`), 'Reloaded unstarted page through browser navigation.');
+  check('pre-start-no-reserve-alarm', await evaluate(`!document.getElementById('hud')?.classList.contains('reserves-low') && !document.querySelector('[data-testid="cometa-resource-reminder"]')`), 'No active-game warning before expedition begins.');
   const favicon = await evaluate(`(async () => { const link=document.querySelector('link[rel~="icon"]'); const url=link?.href || new URL('/favicon.ico', location.href).href; const r=await fetch(url); return {url,status:r.status}; })()`);
   check('favicon-available', favicon.status === 200, favicon);
-  await loadFixture(base, fixtures.academy, {x:0,y:0,z:-10}); await capture('01-academy', 'academy', 'Academy and Cometa, staged pose.');
+  await loadFixture(base, fixtures.academy, {x:0,y:0,z:-10}); await auditResourceHud('desktop'); await capture('01-academy', 'academy', 'Academy and Cometa, staged pose.');
   await loadFixture(base, fixtures.habitat, {x:0,y:0,z:-14}); await capture('02-habitat', 'habitat', 'Habitat on arrival, staged pose.');
   await loadFixture(base, fixtures.habitat, {x:0,y:0,z:-6}); await capture('03-habitat-crew', 'habitat', 'Habitat crew closer to console, staged pose.');
   await loadFixture(base, fixtures.canyon, {x:5,y:0,z:4}); await capture('04-canyon', 'canyon', 'Canyon after Scout repair, staged pose.');
   await loadFixture(base, fixtures.greenhouse, {x:0,y:0,z:-5}); await capture('05-greenhouse', 'greenhouse', 'Greenhouse after simulated crop growth and harvest, staged pose.');
   await loadFixture(base, fixtures.academy, {x:0,y:0,z:-10});
   await cdp.send('Emulation.setDeviceMetricsOverride', {width:390,height:844,deviceScaleFactor:2,mobile:true}); await cdp.send('Emulation.setTouchEmulationEnabled', {enabled:true,maxTouchPoints:5});
-  await sleep(500); await capture('06-mobile', 'academy', 'Mobile viewport, staged academy pose.');
+  await sleep(500); await auditResourceHud('mobile'); await capture('06-mobile', 'academy', 'Mobile viewport, staged academy pose.');
   await cdp.send('Emulation.setDeviceMetricsOverride', {width:1280,height:800,deviceScaleFactor:1,mobile:false}); await cdp.send('Emulation.setTouchEmulationEnabled', {enabled:false});
+  await loadFixture(base, fixtures.lowReserve, {x:0,y:0,z:-10});
+  const low = await wait(`(() => { const h=document.getElementById('hud'); const reminder=document.querySelector('[data-testid="cometa-resource-reminder"]'); return h?.classList.contains('reserves-low') && reminder?.textContent ? { alarm:true, reminder:reminder.textContent, energy:document.querySelector('[aria-label="ENERGIA"]')?.getAttribute('aria-valuetext') } : null; })()`, 10000).catch(() => null);
+  check('low-reserve-hud-and-cometa-reminder', Boolean(low?.alarm && /energia/i.test(low.reminder)), low);
+  await capture('07-resource-alert', 'lowReserve', 'Low academy battery created by 26 simulated ticks; staged position.');
+  await click('[data-testid="cometa-toggle"]');
+  const pipFallback = await wait(`(() => { const pip=document.getElementById('pip')?.textContent || ''; return /energia está baixa/i.test(pip) && !document.querySelector('[data-testid="cometa-resource-reminder"]') ? pip : null; })()`, 10000).catch(() => null);
+  check('low-reserve-pip-fallback-after-cometa-disabled', Boolean(pipFallback), pipFallback);
   await loadFixture(base, fixtures.sheltered, {x:9,y:0,z:1});
   const sheltered = await evaluate(`(() => ({ snap:window.__ASTRA_WORLD_DEBUG__.getSnapshot().cometa, exit:!!document.querySelector('[data-testid="btn-exit-shelter"]') }))()`);
   check('shelter-cometa-pressurized-visible', sheltered.exit && sheltered.snap.enabled && sheltered.snap.pressurized, sheltered);
@@ -152,7 +187,7 @@ async function run() {
   check('shelter-cometa-sniff-ui', before.includes('pressurizado') && after.includes('pressurizado'), {before,after, note:'UI availability only; this check does not assert counter or physics.'});
   report.knownIssues = ['Canyon target label can still say Scout avariado after the Scout is recruited; observed in a staged screenshot, not verified by a dedicated assertion.'];
   report.errors = errors; check('no-uncaught-errors-or-http-failures', !errors.exceptions.length && !errors.consoleErrors.length && !errors.http.length && !errors.network.length, errors);
-  check('six-staged-captures', report.screenshots.length === 6, report.screenshots.map(s => s.file));
+  check('seven-staged-captures', report.screenshots.length === 7, report.screenshots.map(s => s.file));
   if (report.status !== 'failed') report.status = 'passed';
   await ctx.browser.send('Browser.close').catch(() => {});
 }

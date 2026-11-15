@@ -25,3 +25,16 @@ for(const beat of beats.beats){
 }
 for(const board of beats.storyboards)if(!manifest.images.some(image=>image.path===board))throw Error('Narrative board missing provenance: '+board);
 console.log(`${beats.beats.length} proposed narrative beats reference current world targets; this does not execute scenes.`);
+
+// Production-vision illustrations have their own ledger; they are never runtime assets.
+const production=JSON.parse(await fs.readFile('docs/art/production-vision/manifest.json','utf8'));
+if(production.status!=='production_concepts_only'||production.images.length!==13)throw Error('Expected 13 production concept boards');
+for(const filename of await fs.readdir('docs/art/production-vision'))if(filename.endsWith('.png')&&!production.images.some(entry=>path.basename(entry.path)===filename))throw Error('Production PNG missing provenance: '+filename);
+for(const entry of production.images){
+ const filename=path.resolve(root,entry.path);
+ if(!filename.startsWith(path.join(root,'docs','art','production-vision')+path.sep))throw Error('Production art path outside its folder');
+ const data=await fs.readFile(filename);
+ if(data.subarray(0,8).toString('hex')!=='89504e470d0a1a0a'||createHash('sha256').update(data).digest('hex')!==entry.sha256||data.length!==entry.bytes)throw Error('Production art integrity mismatch: '+entry.path);
+ if(data.readUInt32BE(16)!==entry.width||data.readUInt32BE(20)!==entry.height||entry.runtimeAsset!==false||entry.aiGenerated!==true||entry.visibleAiLabel!==true||!entry.credit||!entry.rights)throw Error('Incomplete production concept provenance: '+entry.path);
+}
+console.log(`${production.images.length} additional production concept boards verified; NASA uniform marks are third-party references, not ASTRA branding or endorsement.`);

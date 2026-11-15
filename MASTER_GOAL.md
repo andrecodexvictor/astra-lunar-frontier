@@ -1,5 +1,6 @@
 # MASTER GOAL — ASTRA, demo independente em Babylon.js
 
+**Direção de produto — 15/11/2026:** o pitch atual prioriza crianças de 7–12 anos, astronauta chibi, parceiro redesenhado a partir de foto opcional, conversas curtas, tarefas visuais e insígnias vestíveis; multiplayer e acompanhamento familiar são expansão futura. As 13 novas pranchas e os 30 slides são conceitos, não aceite de produção. O próximo incremento delimitado está em `docs/presentation/NEXT_GOAL.md`.
 > Você é responsável por transformar o estado real deste clone em um jogo 3D jogável, original, científico e modular. Desenvolva em lotes verificáveis. Não entregue apenas planejamento, uma landing page ou um chatbot. Preserve o primeiro corte implementado e continue até o escopo protegido estar concluído e testado dentro das capacidades disponíveis.
 
 ## 1. Mandato e precedência

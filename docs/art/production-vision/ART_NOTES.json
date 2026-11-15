@@ -1,0 +1,66 @@
+{
+  "status": "13 final AI-generated production concepts; not runtime screenshots",
+  "sourceNotes": [
+    "PART14_17_NOTES.json",
+    "PART18_21_NOTES.json",
+    "NASA_PATCH_09_13_NOTES.json",
+    "NASA_PATCH_14_17_NOTES.json",
+    "NASA_PATCH_18_21_NOTES.json"
+  ],
+  "images": [
+    {
+      "file": "09-partner-lunar-journey.png",
+      "concept": "Jornada lunar: astronauta, PIP e Cometa"
+    },
+    {
+      "file": "10-create-your-companion.png",
+      "concept": "Escolha e personalização do companheiro"
+    },
+    {
+      "file": "11-playful-tasks-dialogue.png",
+      "concept": "Tarefa prática e diálogo curto"
+    },
+    {
+      "file": "12-home-family-learning.png",
+      "concept": "Base-casa, conquistas e família"
+    },
+    {
+      "file": "13-badges-coop-friends.png",
+      "concept": "Cooperação futura e insígnias"
+    },
+    {
+      "file": "14-avatar-photo-stylization.png",
+      "concept": "Foto como referência de avatar estilizado"
+    },
+    {
+      "file": "15-short-dialogue-voice.png",
+      "concept": "Diálogo no mundo e conversa por voz proposta"
+    },
+    {
+      "file": "16-museum-science-discovery.png",
+      "concept": "Museu, experiências e vídeos contextuais"
+    },
+    {
+      "file": "17-resource-care-alert.png",
+      "concept": "Barras visuais e cuidado com os recursos"
+    },
+    {
+      "file": "18-knowledge-badges-uniform.png",
+      "concept": "Broches de conhecimento no uniforme"
+    },
+    {
+      "file": "19-family-companion-app.png",
+      "concept": "Aplicativo familiar proposto"
+    },
+    {
+      "file": "20-worlds-next-destinations.png",
+      "concept": "Academia, órbita, Lua e expansão marciana"
+    },
+    {
+      "file": "21-character-motion-adventure.png",
+      "concept": "Movimento e proporções do personagem"
+    }
+  ],
+  "referenceRights": "NASA identifiers remain third-party marks; ASTRA is independent. Generated patches are illustrative.",
+  "scientificScope": "Fictional geography. Plants are generally illustrated in habitats/greenhouses; these artworks are not scientific terrain or engineering diagrams. Board 14 fantasy biomes are explicitly fictional."
+}

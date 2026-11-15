@@ -1,0 +1,588 @@
+{
+  "status": "passed",
+  "date": "2026-11-15",
+  "runtimeApplicationCommit": "9a6c65f62b0ecdf6c36369411077e10b18e19dff",
+  "checks": [
+    {
+      "name": "30-slides-6-seconds-180-total",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "pptx-zip-integrity",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "pptx-30-slides",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "slide-1-6000ms",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "slide-1-authored-notes",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "slide-1-editable-text",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "slide-2-6000ms",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "slide-2-authored-notes",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "slide-2-editable-text",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "slide-3-6000ms",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "slide-3-authored-notes",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "slide-3-editable-text",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "slide-4-6000ms",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "slide-4-authored-notes",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "slide-4-editable-text",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "slide-5-6000ms",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "slide-5-authored-notes",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "slide-5-editable-text",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "slide-6-6000ms",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "slide-6-authored-notes",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "slide-6-editable-text",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "slide-7-6000ms",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "slide-7-authored-notes",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "slide-7-editable-text",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "slide-8-6000ms",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "slide-8-authored-notes",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "slide-8-editable-text",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "slide-9-6000ms",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "slide-9-authored-notes",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "slide-9-editable-text",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "slide-10-6000ms",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "slide-10-authored-notes",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "slide-10-editable-text",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "slide-11-6000ms",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "slide-11-authored-notes",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "slide-11-editable-text",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "slide-12-6000ms",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "slide-12-authored-notes",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "slide-12-editable-text",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "slide-13-6000ms",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "slide-13-authored-notes",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "slide-13-editable-text",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "slide-14-6000ms",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "slide-14-authored-notes",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "slide-14-editable-text",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "slide-15-6000ms",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "slide-15-authored-notes",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "slide-15-editable-text",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "slide-16-6000ms",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "slide-16-authored-notes",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "slide-16-editable-text",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "slide-17-6000ms",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "slide-17-authored-notes",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "slide-17-editable-text",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "slide-18-6000ms",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "slide-18-authored-notes",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "slide-18-editable-text",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "slide-19-6000ms",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "slide-19-authored-notes",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "slide-19-editable-text",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "slide-20-6000ms",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "slide-20-authored-notes",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "slide-20-editable-text",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "slide-21-6000ms",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "slide-21-authored-notes",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "slide-21-editable-text",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "slide-22-6000ms",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "slide-22-authored-notes",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "slide-22-editable-text",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "slide-23-6000ms",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "slide-23-authored-notes",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "slide-23-editable-text",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "slide-24-6000ms",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "slide-24-authored-notes",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "slide-24-editable-text",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "slide-25-6000ms",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "slide-25-authored-notes",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "slide-25-editable-text",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "slide-26-6000ms",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "slide-26-authored-notes",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "slide-26-editable-text",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "slide-27-6000ms",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "slide-27-authored-notes",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "slide-27-editable-text",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "slide-28-6000ms",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "slide-28-authored-notes",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "slide-28-editable-text",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "slide-29-6000ms",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "slide-29-authored-notes",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "slide-29-editable-text",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "slide-30-6000ms",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "slide-30-authored-notes",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "slide-30-editable-text",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "pdf-30-pages",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "concept-book-13-pages",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "30-png-and-jpeg-slides",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "html-single-file-30-embedded-images",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "30-speaker-script-rows",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "13-new-and-8-prior-concept-pngs",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "13-runtime-glb-and-7-svg-portraits",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "02-artes-file-hashes",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "03-demo-jogavel-file-hashes",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "exported-runtime-equals-verified-dist",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "launcher-bound-to-localhost",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "launcher-serves-index",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "launcher-serves-all-30-runtime-files",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "mp4-exact-180-seconds-no-audio",
+      "passed": true,
+      "detail": {
+        "programs": [],
+        "stream_groups": [],
+        "streams": [
+          {
+            "codec_type": "video",
+            "width": 1920,
+            "height": 1080,
+            "r_frame_rate": "12/1"
+          }
+        ],
+        "format": {
+          "duration": "180.000000"
+        }
+      }
+    }
+  ],
+  "presentation": {
+    "slides": 30,
+    "secondsEach": 6,
+    "totalSeconds": 180,
+    "narrationWords": 398,
+    "powerPointApplicationRender": "not available; structure and editable text checked; PDF/PNG inspected"
+  },
+  "visualRuntimeEvidence": {
+    "kind": "staged Chromium/SwiftShader",
+    "passedChecks": 16,
+    "captures": 7,
+    "fullRouteE2E": "incomplete/pending hardware-GPU validation"
+  },
+  "futureOnly": [
+    "Photo-to-stylized-avatar service",
+    "Voice conversation and AI tutor",
+    "Wearable knowledge badges",
+    "Parental app",
+    "Multiplayer"
+  ],
+  "video": {
+    "durationSeconds": 180,
+    "narrationRecorded": false,
+    "streams": [
+      {
+        "codec_type": "video",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "12/1"
+      }
+    ]
+  }
+}
