@@ -66,6 +66,7 @@ import {
   type SpeakerPortraitId,
 } from './app/catalogue';
 import { renderPortraitSvg } from './presentation/portraits';
+import { renderResourceHud, resourceReminder, resourceReminderTarget } from './presentation/resourceHud';
 
 export type TouchControlsPref = 'auto' | 'on' | 'off';
 
@@ -745,7 +746,7 @@ export function mountAstraApp(): void {
     </div>`;
   }
 
-  function renderCometaControlsBlock(location: 'modal' | 'hud'): string {
+  function renderCometaControlsBlock(location: 'modal' | 'hud', reminder: string | null = null): string {
     const c = state.cometa;
     const pressurized = isPressurizedArea(state);
     const statusLabel = !c.enabled
@@ -774,7 +775,7 @@ export function mountAstraApp(): void {
         <button type="button" class="mini-btn" data-action="petCometa" data-testid="cometa-pet">Carinho</button>
         <button type="button" class="mini-btn" data-action="cometaSniff" data-testid="cometa-sniff" title="${pressurized ? 'Área pressurizada' : 'Bloqueado no vácuo'}">${pressurized ? 'Farejar' : 'Farejar (vácuo)'}</button>
         <button type="button" class="mini-btn" data-action="cometaLookBeacon" data-testid="cometa-beacon">Observar farol</button>
-      </div>`
+      </div>${reminder ? `<p class="cometa-reminder" data-testid="cometa-resource-reminder">${escapeHtml(reminder)}</p>` : ''}`
           : ''
       }`;
     }
@@ -1670,23 +1671,11 @@ export function mountAstraApp(): void {
       timeEl.textContent = nextTimeText;
     }
 
-    setHtmlIfChanged(
-      'resources',
-      [
-        ['O₂', '◉', fmtPt(r.oxygen, 3), 'kg', '#65d9e8', r.oxygen <= 0.15 ? 'crítico' : 'ok'],
-        ['ENERGIA', '⚡', fmtPt(battery), 'kWh', '#ffc86b', battery <= 1.5 ? 'baixa' : 'ok'],
-        ['ÁGUA', '💧', fmtPt(r.potable), 'kg', '#77b7ff', r.potable <= 1 ? 'baixa' : 'ok'],
-        ['ALIMENTO', '🌱', fmtPt(r.food), 'kg', '#8bc787', r.food <= 0.5 ? 'baixo' : 'ok'],
-      ]
-        .map(
-          ([label, icon, value, unit, color, statusTag]) =>
-            `<div class="resource" style="--resource:${color}" aria-label="${label}: ${value} ${unit} (${statusTag})">
-            <span>${icon} ${label}</span>
-            <strong>${value}<small>${unit}</small></strong>
-          </div>`,
-        )
-        .join(''),
-    );
+    const hudResources = { oxygen: r.oxygen, battery, potable: r.potable, food: r.food };
+    const lowReminder = resourceReminder(hudResources, started && state.phase !== 'complete' && state.phase !== 'failed');
+    const reminderTarget = resourceReminderTarget(lowReminder, state.cometa.enabled);
+    $('hud').classList.toggle('reserves-low', Boolean(lowReminder));
+    setHtmlIfChanged('resources', renderResourceHud(hudResources, started && state.phase !== 'complete' && state.phase !== 'failed'));
 
     setHtmlIfChanged(
       'objective',
@@ -1711,7 +1700,7 @@ export function mountAstraApp(): void {
             ? `Scout em reparo (${state.scoutRepairRemaining} s). Aguarde com os painéis fechados.`
             : Object.values(state.modules).some((m) => m.repairRemaining > 0)
               ? 'Reparo em andamento. O relógio avança quando os painéis estão fechados.'
-              : beat.lines[0]?.line ?? local?.[1] ?? 'Cada medida conta uma parte da história.';
+              : reminderTarget.pip ?? beat.lines[0]?.line ?? local?.[1] ?? 'Cada medida conta uma parte da história.';
 
     setHtmlIfChanged(
       'pip',
@@ -1746,7 +1735,7 @@ export function mountAstraApp(): void {
         : `⚠ <strong>ALERTA DE RADIAÇÃO</strong> • abrigo em até ${Math.max(0, 300 - (state.lunarTick % 600))} s da missão`,
     );
 
-    setHtmlIfChanged('cometa-strip', renderCometaControlsBlock('hud'));
+    setHtmlIfChanged('cometa-strip', renderCometaControlsBlock('hud', reminderTarget.cometa));
 
     setHtmlIfChanged(
       'interact',

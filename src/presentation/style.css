@@ -1613,3 +1613,33 @@ html.reduced-motion *::after {
     scroll-behavior: auto !important;
   }
 }
+
+/* Resource bars use reference scales, while exact values remain available to assistive technology. */
+.resource-meter {
+  height: 7px;
+  overflow: hidden;
+  border-radius: 99px;
+  background: rgba(255, 255, 255, 0.16);
+}
+.resource-meter > span {
+  display: block;
+  height: 100%;
+  border-radius: inherit;
+  background: var(--resource, var(--cyan));
+}
+.resource strong { font-size: 0.68rem; line-height: 1.2; }
+.resource-low { border-color: #e88a80; }
+.hud.reserves-low::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  box-shadow: inset 0 0 0 3px rgba(220, 91, 82, 0.6), inset 0 0 28px rgba(220, 91, 82, 0.16);
+  pointer-events: none;
+  z-index: 0;
+}
+.cometa-reminder {
+  margin: 5px 0 0;
+  color: #ffe1db;
+  font-size: 0.75rem;
+  line-height: 1.3;
+}
