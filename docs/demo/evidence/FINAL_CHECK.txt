@@ -14,10 +14,10 @@
  RUN  v4.1.12 /workspace/projects/astra-lunar-frontier
 
 
- Test Files  8 passed (8)
-      Tests  64 passed (64)
-   Start at  00:22:59
-   Duration  21.79s (transform 2.21s, setup 0ms, import 4.20s, tests 14.87s, environment 1ms)
+ Test Files  9 passed (9)
+      Tests  67 passed (67)
+   Start at  11:36:38
+   Duration  21.62s (transform 1.87s, setup 0ms, import 3.94s, tests 13.97s, environment 2ms)
 
 
 > astra-lunar-frontier-demo@0.2.0 audit:assets
@@ -46,7 +46,7 @@ Skill audit passed: 13 skills, 21 skill files, 3 license sources; 25 hashes veri
 > astra-lunar-frontier-demo@0.2.0 audit:docs
 > node scripts/audit-docs.mjs
 
-Documentation: 33 JSON files parse; 60 local Markdown links resolve.
+Documentation: 43 JSON files parse; 67 local Markdown links resolve.
 
 > astra-lunar-frontier-demo@0.2.0 audit:art
 > node scripts/audit-art.mjs
@@ -61,25 +61,26 @@ story-canyon: 1672x941, SHA-256 verified, reference only
 story-homecoming: 1671x941, SHA-256 verified, reference only
 8 concept boards verified. Labels were visually inspected; this is not OCR, rig or GPU validation.
 10 proposed narrative beats reference current world targets; this does not execute scenes.
+13 additional production concept boards verified; NASA uniform marks are third-party references, not ASTRA branding or endorsement.
 
 > astra-lunar-frontier-demo@0.2.0 build
 > tsc --noEmit && vite build && node scripts/refresh-build-manifest.mjs
 
 vite v7.3.8 building client environment for production...
 transforming...
-✓ 895 modules transformed.
+✓ 896 modules transformed.
 rendering chunks...
 computing gzip size...
 dist/index.html                                     1.43 kB │ gzip:   0.81 kB
-dist/assets/index-D9uRhtW3.css                     21.23 kB │ gzip:   5.25 kB
-dist/assets/createGameWorld-BqVdhwKx.js            52.30 kB │ gzip:  21.25 kB
+dist/assets/index-D-HEAQWC.css                     21.73 kB │ gzip:   5.39 kB
+dist/assets/createGameWorld-bcPVylwF.js            52.30 kB │ gzip:  21.25 kB
 dist/assets/babylon-loaders-B7M8COQU.js           125.71 kB │ gzip:  28.12 kB
-dist/assets/index-tfFyaPVP.js                     175.48 kB │ gzip:  55.11 kB
+dist/assets/index-B7QU17xk.js                     177.06 kB │ gzip:  55.68 kB
 dist/assets/babylon-scene-features-C6wuqKuw.js    182.52 kB │ gzip:  44.39 kB
 dist/assets/babylon-pbr-RJ1oSfen.js               224.60 kB │ gzip:  44.06 kB
 dist/assets/babylon-webgpu-BqrH-B6G.js            238.48 kB │ gzip:  58.66 kB
 dist/assets/babylon-shaders-BrV0TE12.js           492.42 kB │ gzip:  94.96 kB
 dist/assets/babylon-shaders-wgsl-4y41GaUY.js      529.35 kB │ gzip:  98.11 kB
 dist/assets/babylon-core-CRq0Owvr.js            1,584.13 kB │ gzip: 416.98 kB
-✓ built in 1m 10s
+✓ built in 1m 5s
 Build inventory: 30 files; SHA-256 recorded.

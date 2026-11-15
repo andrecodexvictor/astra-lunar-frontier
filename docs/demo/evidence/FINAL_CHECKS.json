@@ -1,8 +1,8 @@
 {
-  "startedAt": "2026-11-15T00:22:45.464810+00:00",
-  "finishedAt": "2026-11-15T00:24:45.157175+00:00",
+  "startedAt": "2026-11-15T11:36:26.382490+00:00",
+  "finishedAt": "2026-11-15T11:38:21.559074+00:00",
   "timezone": "UTC; Git dates unchanged; project display America/Sao_Paulo",
-  "sourceHeadAtCheck": "55d0163dd3773fdc930acdbe0f8966279fed480d",
+  "sourceHeadAtCheck": "45c2ddb980b8d34b60fc08652e8417111b36c1f2",
   "sourceDirtyAtCheck": true,
   "scope": "Final source/docs gate. Generated verification records are written after the commands. Hardware GPU and full E2E acceptance remain separate.",
   "commands": [
