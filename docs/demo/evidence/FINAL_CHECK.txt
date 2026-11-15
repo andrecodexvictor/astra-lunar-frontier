@@ -16,8 +16,8 @@
 
  Test Files  8 passed (8)
       Tests  64 passed (64)
-   Start at  00:14:48
-   Duration  26.01s (transform 1.87s, setup 0ms, import 4.10s, tests 19.02s, environment 1ms)
+   Start at  00:22:59
+   Duration  21.79s (transform 2.21s, setup 0ms, import 4.20s, tests 14.87s, environment 1ms)
 
 
 > astra-lunar-frontier-demo@0.2.0 audit:assets
@@ -46,7 +46,7 @@ Skill audit passed: 13 skills, 21 skill files, 3 license sources; 25 hashes veri
 > astra-lunar-frontier-demo@0.2.0 audit:docs
 > node scripts/audit-docs.mjs
 
-Documentation: 30 JSON files parse; 60 local Markdown links resolve.
+Documentation: 33 JSON files parse; 60 local Markdown links resolve.
 
 > astra-lunar-frontier-demo@0.2.0 audit:art
 > node scripts/audit-art.mjs
@@ -81,5 +81,5 @@ dist/assets/babylon-webgpu-BqrH-B6G.js            238.48 kB │ gzip:  58.66 kB
 dist/assets/babylon-shaders-BrV0TE12.js           492.42 kB │ gzip:  94.96 kB
 dist/assets/babylon-shaders-wgsl-4y41GaUY.js      529.35 kB │ gzip:  98.11 kB
 dist/assets/babylon-core-CRq0Owvr.js            1,584.13 kB │ gzip: 416.98 kB
-✓ built in 54.79s
+✓ built in 1m 10s
 Build inventory: 30 files; SHA-256 recorded.
