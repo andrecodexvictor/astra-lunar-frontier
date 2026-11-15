@@ -551,6 +551,25 @@
           "duration": "180.000000"
         }
       }
+    },
+    {
+      "name": "mp4-exact-180-seconds-no-audio",
+      "passed": true,
+      "detail": {
+        "programs": [],
+        "stream_groups": [],
+        "streams": [
+          {
+            "codec_type": "video",
+            "width": 1920,
+            "height": 1080,
+            "r_frame_rate": "12/1"
+          }
+        ],
+        "format": {
+          "duration": "180.000000"
+        }
+      }
     }
   ],
   "presentation": {
@@ -584,5 +603,11 @@
         "r_frame_rate": "12/1"
       }
     ]
+  },
+  "codeGate": {
+    "testsPassed": 67,
+    "testFiles": 9,
+    "dependencyVulnerabilities": 0,
+    "evidence": "docs/demo/evidence/FINAL_CHECKS.json"
   }
 }

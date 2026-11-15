@@ -3,8 +3,52 @@
   "scope": "Independent demo and delivery candidate; no official submission",
   "historyPreserved": true,
   "officialSubmission": false,
-  "testedApplicationCommit": "a239c952675598253a4c5fa4497f7c45273714f9",
+  "testedApplicationCommit": "9a6c65f62b0ecdf6c36369411077e10b18e19dff",
   "sites": [
+    {
+      "channel": "demo",
+      "projectId": "appgprj_6af7b0ab1c9c8191a6e076d13a6764c7",
+      "url": "https://astra-lunar-frontier-academy.andrevictorandrade.chatgpt.site",
+      "repository": "https://github.com/andrecodexvictor/astra-lunar-frontier",
+      "access": "public",
+      "status": "succeeded",
+      "versionNumber": 6,
+      "versionId": "appgprj_6af7b0ab1c9c8191a6e076d13a6764c7~appgver_e29f41132cf48191a9b824b33e66fbc7",
+      "deploymentId": "appgdep_6af99b0b7ef081918c973092075964bd",
+      "siteSourceCommit": "db303be40ea6196a90241a16936e6a80e1d6eda3",
+      "githubSourceCommit": "a59276cd53e57a11caeaf240ba486a7ceb508a0c",
+      "archiveContentHash": "sha256:0f66e5a3ff976f4b35666236849206b49dfafc68328200cea9275fbb8ce82fc5",
+      "publishedAt": "2026-11-15T11:44:24.654054+00:00"
+    },
+    {
+      "channel": "delivery-candidate",
+      "projectId": "appgprj_6af8f2105e148191beb4c0a78d00fec7",
+      "url": "https://astra-mission-trainer.andrevictorandrade.chatgpt.site",
+      "repository": "https://github.com/andrecodexvictor/astra-junior-astronaut-mission-trainer",
+      "access": "public",
+      "status": "succeeded",
+      "versionNumber": 2,
+      "versionId": "appgprj_6af8f2105e148191beb4c0a78d00fec7~appgver_2497d003db208191931a314523001812",
+      "deploymentId": "appgdep_6af99afa5a988191a401023cdfbb8fea",
+      "siteSourceCommit": "12ab4f5f7bcc4b65ba6fcfbffd58b6624b5e9bdf",
+      "githubSourceCommit": "3b5c10d1c854365953272794e584984f2e532d4f",
+      "archiveContentHash": "sha256:1ba8d2faa749f107532cb23d88cc080507a59d66bdbfac1304bc3a1bed4c5608",
+      "publishedAt": "2026-11-15T11:44:07.537926+00:00"
+    }
+  ],
+  "notes": [
+    "GitHub history and actual timestamps retained; later verification/publication metadata commits do not change the published application snapshot.",
+    "Sites uses independent source commits. The source snapshots above map those to exact GitHub revisions.",
+    "Both public audiences were confirmed before publication. No login or external connected apps are required by the game.",
+    "CPU gate and staged visual audit passed. Full route E2E remains incomplete on SwiftShader; physical-GPU, performance and 20-transition acceptance remain pending."
+  ],
+  "evidence": {
+    "cpu": "docs/demo/evidence/FINAL_CHECKS.json",
+    "browserRoute": "docs/demo/E2E_REPORT.json",
+    "stagedVisual": "docs/demo/VISUAL_FIXTURE_REPORT.json",
+    "visualReview": "docs/demo/VISUAL_REVIEW.md"
+  },
+  "history": [
     {
       "channel": "demo",
       "projectId": "appgprj_6af7b0ab1c9c8191a6e076d13a6764c7",
@@ -36,16 +80,5 @@
       "publishedAt": "2026-11-15T00:21:48.498113+00:00"
     }
   ],
-  "notes": [
-    "GitHub history and actual timestamps retained; later verification/publication metadata commits do not change the published application snapshot.",
-    "Sites uses independent source commits. The source snapshots above map those to exact GitHub revisions.",
-    "Both public audiences were confirmed before publication. No login or external connected apps are required by the game.",
-    "CPU gate and staged visual audit passed. Full route E2E remains incomplete on SwiftShader; physical-GPU, performance and 20-transition acceptance remain pending."
-  ],
-  "evidence": {
-    "cpu": "docs/demo/evidence/FINAL_CHECKS.json",
-    "browserRoute": "docs/demo/E2E_REPORT.json",
-    "stagedVisual": "docs/demo/VISUAL_FIXTURE_REPORT.json",
-    "visualReview": "docs/demo/VISUAL_REVIEW.md"
-  }
+  "latestBatch": "Graphical resource HUD and 30-slide / 13-concept-board export, 2026-11-15"
 }

@@ -24,8 +24,17 @@ class Server(socketserver.TCPServer):
     allow_reuse_address = True
 
 handler = functools.partial(http.server.SimpleHTTPRequestHandler, directory=str(Path(__file__).resolve().parent / "dist"))
-# Port 0 asks the operating system for an available local port.
-with Server(("127.0.0.1", 0), handler) as server:
+# Prefer a stable origin so browser-local saves survive a normal restart.
+server = None
+for port in range(8765, 8775):
+    try:
+        server = Server(("127.0.0.1", port), handler)
+        break
+    except OSError:
+        continue
+if server is None:
+    server = Server(("127.0.0.1", 0), handler)
+with server:
     url = "http://127.0.0.1:%d/" % server.server_address[1]
     print("ASTRA: " + url, flush=True)
     print("Mantenha esta janela aberta; Ctrl+C encerra.", flush=True)
@@ -124,7 +133,7 @@ def main():
     write(demo / 'Iniciar.sh', '#!/bin/sh\ncd "$(dirname "$0")"\nif command -v python3 >/dev/null 2>&1; then exec python3 iniciar.py; else echo "Instale Python 3 e tente novamente."; exit 1; fi\n', 'atalho Linux/macOS')
     (demo / 'Iniciar.sh').chmod(0o755)
     write(demo / 'Iniciar.bat', '@echo off\r\ncd /d "%~dp0"\r\nwhere py >nul 2>nul\r\nif not errorlevel 1 (py -3 iniciar.py & goto :end)\r\nwhere python >nul 2>nul\r\nif not errorlevel 1 (python iniciar.py & goto :end)\r\necho Instale Python 3 e tente novamente.\r\npause\r\n:end\r\n', 'atalho Windows')
-    write(demo / 'LEIA-ME.txt', f'''ASTRA — DEMO JOGÁVEL\n\nOnline: {SITE}\nA versão online não exige login para jogar.\n\nPara jogar esta cópia local: descompacte toda a pasta; instale Python 3 se necessário; execute Iniciar.bat no Windows, Iniciar.sh no Linux/macOS ou python3 iniciar.py. O servidor usa apenas 127.0.0.1 e escolhe uma porta livre. O navegador abre automaticamente; se não abrir, copie o endereço mostrado. Mantenha a janela aberta e pressione Ctrl+C para encerrar. Não é necessário npm para executar este build. Abrir dist/index.html por file:// não funciona corretamente.\n\nUse navegador com WebGL 2. WASD ou setas movem; arraste o mouse para a câmera; Shift corre, Espaço salta e E interage. Tab abre objetivos, J diário, M mapa e Esc pausa. Há controles de toque na tela. O salvamento fica no navegador.\n\nEsta é uma demo independente, não uma submissão oficial nem produto endossado pela NASA. Modelos ASTRA e licenças estão em dist/assets; proveniência da textura da Terra em dist/science. Consulte o pacote de artes para créditos completos. As capturas preparadas não provam um percurso completo. Revisão em GPU física, dispositivos e teste completo de ponta a ponta permanecem limitados/pendentes; desempenho e aparência variam. Voz, geração de avatar por foto, insígnias vestíveis, multiplayer e aplicativo de pais são conceitos futuros, não funções implementadas.\n''', 'guia de execução')
+    write(demo / 'LEIA-ME.txt', f'''ASTRA — DEMO JOGÁVEL\n\nOnline: {SITE}\nA versão online não exige login para jogar.\n\nPara jogar esta cópia local: descompacte toda a pasta; instale Python 3 se necessário; execute Iniciar.bat no Windows, Iniciar.sh no Linux/macOS ou python3 iniciar.py. O servidor usa apenas 127.0.0.1, preferindo a porta 8765 para manter o endereço e os saves; se ocupada, tenta outra porta livre. Saves pertencem ao endereço/porta do navegador. O navegador abre automaticamente; se não abrir, copie o endereço mostrado. Mantenha a janela aberta e pressione Ctrl+C para encerrar. Não é necessário npm para executar este build. Abrir dist/index.html por file:// não funciona corretamente.\n\nUse navegador com WebGL 2. WASD ou setas movem; arraste o mouse para a câmera; Shift corre, Espaço salta e E interage. Tab abre objetivos, J diário, M mapa e Esc pausa. Há controles de toque na tela. O salvamento fica no navegador.\n\nEsta é uma demo independente, não uma submissão oficial nem produto endossado pela NASA. Modelos ASTRA e licenças estão em dist/assets; proveniência da textura da Terra em dist/science. Consulte o pacote de artes para créditos completos. As capturas preparadas não provam um percurso completo. Revisão em GPU física, dispositivos e teste completo de ponta a ponta permanecem limitados/pendentes; desempenho e aparência variam. Voz, geração de avatar por foto, insígnias vestíveis, multiplayer e aplicativo de pais são conceitos futuros, não funções implementadas.\n''', 'guia de execução')
     write(art / 'LEIA-ME.txt', '''ASTRA — ARTES E REFERÊNCIAS\n\n01: oito conceitos originais gerados por IA; 02: treze imagens de visão futura geradas por IA, não funcionalidades atuais. 03: capturas históricas reais; 04: capturas reais com estados e câmeras preparados, não prova de percurso completo. 05: 13 modelos GLB reais e textura da Terra. 06: sete SVGs produzidos pela função real do jogo; o cadete usa aparência padrão. O índice visual é apenas uma folha de contato; os PNGs originais estão preservados. Consulte creditos-e-contexto para proveniência, licenças e limitações. Voz, geração de avatar por foto, insígnias vestíveis, multiplayer e aplicativo de pais são conceitos futuros.\n''', 'guia de artes')
     for folder in (art, demo):
         entries = []
